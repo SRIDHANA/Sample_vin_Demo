@@ -1,0 +1,36 @@
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>VIN Info/title>
+
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
+</head>
+<body>
+<table>
+    <thead>
+        <tr>
+            <th> Title </th>
+            <th> Author </th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${vininfo}">
+            <td colspan="2"> No Books Available </td>
+        </tr>
+        <tr th:each="varval : ${vininfo}">
+            <td><span th:text="${varval.Value}"> Value </span></td>
+            <td><span th:text="${varval.ValueId}"> ValueId </span></td>
+            <td><span th:text="${varval.Variable}"> Variable </span></td>
+            <td><span th:text="${varval.VariableId}"> VariableId </span></td>
+      
+      
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
